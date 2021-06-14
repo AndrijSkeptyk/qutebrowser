@@ -2058,13 +2058,20 @@ config.bind('?', 'set-cmd-text ?')
 config.bind('@', 'macro-run')
 config.bind('`', 'mode-enter set_mark')
 config.bind('i', 'mode-enter insert')
+config.bind('ш', 'mode-enter insert')
 config.bind('n', 'search-next')
+config.bind('т', 'search-next')
 config.bind('q', 'macro-record')
+config.bind('й', 'macro-record')
 config.bind('v', 'mode-enter caret')
+config.bind('м', 'mode-enter caret')
 config.bind('V', 'mode-enter caret ;; selection-toggle --line')
+config.bind('М', 'mode-enter caret ;; selection-toggle --line')
 config.bind('<Ctrl-V>', 'mode-enter passthrough')
 config.bind('N', 'search-prev')
+config.bind('Т', 'search-prev')
 config.bind('gi', 'hint inputs --first')
+config.bind('пш', 'hint inputs --first')
 
 #перемещение по странице и ее отображение и загрузка
 config.bind('+', 'zoom-in')
@@ -2528,11 +2535,17 @@ config.bind('бец','set-cmd-text -s :spawn -o crow}')
 config.bind(',tc','spawn -o crow {clipboard}')
 config.bind('бес','spawn -o crow {clipboard}')
 #
-config.bind(',dvy',"spawn youtube-dl -o '/home/andrey/Загрузки/%(title)s.%(ext)s' {url}")
-config.bind('бвмн',"spawn youtube-dl -o '/home/andrey/Загрузки/%(title)s.%(ext)s' {url}")
+config.bind(',dv',"spawn -u youtube-dl.sh")
+config.bind('бвм',"spawn -u youtube-dl.sh")
 #
-config.bind(',dpm','spawn monolith -o /home/andrey/Загрузки/{title}.html {url}')
-config.bind('бвзь','spawn monolith -o /home/andrey/Загрузки/{title}.html {url}')
+config.bind(',dm','spawn -u monolith.sh')
+config.bind('бвь','spawn -u monolith.sh')
+config.bind(',dM','spawn -u monolithc.sh')
+config.bind('бвЬ','spawn -u monolithc.sh')
+#
+config.bind('!tt','spawn -u ttyd.sh')
+config.bind('!ее','spawn -u ttyd.sh')
+#
 #
 config.load_autoconfig()
 
