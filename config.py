@@ -489,8 +489,8 @@ c.auto_save.session = True
 ##   - lightness-cielab: Modify colors by converting them to CIELAB color space and inverting the L value. Not available with Qt < 5.14.
 ##   - lightness-hsl: Modify colors by converting them to the HSL color space and inverting the lightness (i.e. the "L" in HSL).
 ##   - brightness-rgb: Modify colors by subtracting each of r, g, and b from their maximum value.
-# c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
-c.colors.webpage.darkmode.algorithm = 'brightness-rgb'
+c.colors.webpage.darkmode.algorithm = 'lightness-cielab'
+#c.colors.webpage.darkmode.algorithm = 'brightness-rgb'
 
 ## Contrast for dark mode. This only has an effect when
 ## `colors.webpage.darkmode.algorithm` is set to `lightness-hsl` or
@@ -540,7 +540,7 @@ c.colors.webpage.darkmode.enabled = True
 ## Valid values:
 ##   - always: Apply dark mode filter to all frames, regardless of content.
 ##   - smart: Apply dark mode filter to frames based on background color.
-# c.colors.webpage.darkmode.policy.page = 'smart'
+c.colors.webpage.darkmode.policy.page = 'smart'
 
 ## Threshold for inverting background elements with dark mode. Background
 ## elements with brightness above this threshold will be inverted, and
@@ -567,7 +567,7 @@ c.colors.webpage.darkmode.enabled = True
 ##   - auto: Use the system-wide color scheme setting.
 ##   - light: Force a light theme.
 ##   - dark: Force a dark theme.
-#c.colors.webpage.preferred_color_scheme = 'light'
+c.colors.webpage.preferred_color_scheme = 'auto'
 
 ## Number of commands to save in the command history. 0: no history / -1:
 ## unlimited
@@ -1126,7 +1126,7 @@ c.content.plugins = True
 ##   - path: Show only the download path.
 ##   - filename: Show only download filename.
 ##   - both: Show download path and filename.
-# c.downloads.location.suggestion = 'path'
+c.downloads.location.suggestion = 'both'
 
 ## Default program used to open downloads. If null, the default internal
 ## handler is used. Any `{}` in the string will be expanded to the
@@ -1153,7 +1153,7 @@ c.downloads.position = 'bottom'
 ## `{line0}`: Same as `{line}`, but starting from index 0. * `{column0}`:
 ## Same as `{column}`, but starting from index 0.
 ## Type: ShellCommand
-# c.editor.command = ['gvim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
+c.editor.command = ['vim', '-f', '{file}', '-c', 'normal {line}G{column0}l']
 
 ## Encoding to use for the editor.
 ## Type: Encoding
@@ -2543,8 +2543,9 @@ config.bind('бвь','spawn -u monolith.sh')
 config.bind(',dM','spawn -u monolithc.sh')
 config.bind('бвЬ','spawn -u monolithc.sh')
 #
-config.bind('!tt','spawn -u ttyd.sh')
-config.bind('!ее','spawn -u ttyd.sh')
+config.bind('!!','spawn -u ttyd.sh')
+config.bind(',,','spawn -u download.sh')
+config.bind('бб','spawn -u download.sh')
 #
 #
 config.load_autoconfig()
